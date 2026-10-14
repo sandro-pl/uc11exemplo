@@ -1,0 +1,562 @@
+[
+  {
+    "id": "01-cinema",
+    "title": "Cinema",
+    "lesson": 2,
+    "core": true,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toEqual",
+      "toBe",
+      "toHaveProperty"
+    ],
+    "contract": "app(titulo, duracao). Retorne {titulo, horas, minutos}. A duração é um inteiro não negativo. Horas completas e minutos restantes devem recompor a duração original.",
+    "hints": [
+      "Experimente uma duração inferior a uma hora.",
+      "Verifique separadamente horas e minutos.",
+      "Confira se horas × 60 + minutos recupera a entrada."
+    ],
+    "sample": [
+      [
+        "Filme",
+        95
+      ],
+      {
+        "titulo": "Filme",
+        "horas": 1,
+        "minutos": 35
+      }
+    ]
+  },
+  {
+    "id": "02-revenda",
+    "title": "Revenda de veículos",
+    "lesson": 3,
+    "core": false,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toBeCloseTo",
+      "toHaveProperty",
+      "toBeGreaterThan"
+    ],
+    "contract": "app(modelo, preco). Retorne {modelo, entrada, parcela}. A entrada corresponde a 30% do preço. O restante é dividido em 12 parcelas. Preço não negativo.",
+    "hints": [
+      "Separe entrada e saldo restante.",
+      "Escolha um preço que facilite calcular 30% mentalmente.",
+      "A entrada mais as 12 parcelas deve recuperar o preço."
+    ],
+    "sample": [
+      [
+        "Carro",
+        12000
+      ],
+      {
+        "modelo": "Carro",
+        "entrada": 3600,
+        "parcela": 700
+      }
+    ]
+  },
+  {
+    "id": "03-restaurante",
+    "title": "Restaurante por quilo",
+    "lesson": 3,
+    "core": false,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toBeCloseTo",
+      "toBe",
+      "toThrow"
+    ],
+    "contract": "app(precoKg, gramas). Retorne o valor numérico a pagar, sem formatá-lo como string. Um quilograma tem 1000 gramas. Entradas não negativas.",
+    "hints": [
+      "Teste exatamente 1000 gramas.",
+      "Inspecione o tipo do retorno.",
+      "Formatação para apresentação e cálculo são responsabilidades diferentes."
+    ],
+    "sample": [
+      [
+        50,
+        300
+      ],
+      15
+    ]
+  },
+  {
+    "id": "04-farmacia",
+    "title": "Promoção da farmácia",
+    "lesson": 3,
+    "core": false,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toBe",
+      "toBeLessThanOrEqual"
+    ],
+    "contract": "app(preco). Retorne o total promocional de duas unidades, descartando os centavos somente depois de multiplicar o preço por dois.",
+    "hints": [
+      "Comece com um preço inteiro.",
+      "Depois teste um preço com centavos.",
+      "O preço promocional não pode exceder o total original das duas unidades."
+    ],
+    "sample": [
+      [
+        10
+      ],
+      20
+    ]
+  },
+  {
+    "id": "05-lanhouse",
+    "title": "Lan house",
+    "lesson": 3,
+    "core": false,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toEqual",
+      "toHaveProperty",
+      "toBe"
+    ],
+    "contract": "app(valorPeriodo, tempoMinutos). Retorne {periodos, total}. Cada período iniciado de 15 minutos é cobrado integralmente. Tempo zero gera zero períodos e total zero.",
+    "hints": [
+      "Compare 15 e 16 minutos.",
+      "Use um preço diferente de 1.",
+      "Verifique quantidade e valor em asserções distintas."
+    ],
+    "sample": [
+      [
+        4,
+        16
+      ],
+      {
+        "periodos": 2,
+        "total": 8
+      }
+    ]
+  },
+  {
+    "id": "06-supermercado",
+    "title": "Supermercado",
+    "lesson": 3,
+    "core": false,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toStrictEqual",
+      "toHaveProperty",
+      "toBeGreaterThan"
+    ],
+    "contract": "app(produto, preco). Retorne {produto, unidades, total}. São três unidades: duas pelo preço integral e a terceira com 50% de desconto.",
+    "hints": [
+      "Confira a estrutura completa do objeto.",
+      "Uma unidade com desconto ainda contribui para o total.",
+      "Compare o total com os valores de duas e três unidades integrais."
+    ],
+    "sample": [
+      [
+        "Arroz",
+        10
+      ],
+      {
+        "produto": "Arroz",
+        "unidades": 3,
+        "total": 25
+      }
+    ]
+  },
+  {
+    "id": "07-media-aluno",
+    "title": "Média do aluno",
+    "lesson": 3,
+    "core": true,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toBe",
+      "toBeTruthy",
+      "toBeFalsy",
+      "toBeGreaterThanOrEqual"
+    ],
+    "contract": "app(nome, nota1, nota2). Retorne {nome, media, aprovado}. Notas entre 0 e 10. Média aritmética das duas notas. Aprovação a partir de 7, inclusive.",
+    "hints": [
+      "Teste notas iguais.",
+      "Inclua um caso cuja média seja exatamente 7.",
+      "Analise cálculo e decisão de aprovação separadamente."
+    ],
+    "sample": [
+      [
+        "Ana",
+        6,
+        8
+      ],
+      {
+        "nome": "Ana",
+        "media": 7,
+        "aprovado": true
+      }
+    ]
+  },
+  {
+    "id": "08-temperatura",
+    "title": "Conversor de temperatura",
+    "lesson": 3,
+    "core": true,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toBeCloseTo",
+      "toBe",
+      "not"
+    ],
+    "contract": "app(celsius). Retorne Fahrenheit como número. Use F = C × 9/5 + 32. Aceite valores negativos e decimais.",
+    "hints": [
+      "Comece com zero grau Celsius.",
+      "Inclua uma entrada com casas decimais.",
+      "Compare o comportamento da conversão numérica com o contrato."
+    ],
+    "sample": [
+      [
+        0
+      ],
+      32
+    ]
+  },
+  {
+    "id": "09-medidas",
+    "title": "Conversor de medidas",
+    "lesson": 2,
+    "core": true,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toStrictEqual",
+      "toHaveProperty",
+      "toBeCloseTo"
+    ],
+    "contract": "app(metros). Retorne {centimetros, milimetros}. Um metro corresponde a 100 centímetros e 1000 milímetros. Aceite decimais não negativos.",
+    "hints": [
+      "Teste um metro.",
+      "Verifique os nomes das propriedades junto com seus valores.",
+      "Calcule as duas unidades separadamente antes de conferir o objeto."
+    ],
+    "sample": [
+      [
+        1
+      ],
+      {
+        "centimetros": 100,
+        "milimetros": 1000
+      }
+    ]
+  },
+  {
+    "id": "10-adivinhacao",
+    "title": "Jogo de adivinhação",
+    "lesson": 4,
+    "core": false,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toEqual",
+      "toBeGreaterThanOrEqual",
+      "toBeLessThanOrEqual"
+    ],
+    "contract": "app(palpite, aleatorio = Math.random). O gerador retorna um número de 0 inclusive até 1 exclusive. Retorne {segredo, resultado}, com segredo de 1 a 10 e resultado \"acertou\", \"maior\" ou \"menor\". Injete um gerador controlado no teste.",
+    "hints": [
+      "Evite depender de um sorteio real nos testes.",
+      "Injete funções que retornem 0 e 0.999.",
+      "Confira se a comparação utiliza o valor da variável."
+    ],
+    "sample": null
+  },
+  {
+    "id": "11-imc",
+    "title": "Calculadora de IMC",
+    "lesson": 3,
+    "core": false,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toBeCloseTo",
+      "toBeLessThan",
+      "toBeGreaterThanOrEqual"
+    ],
+    "contract": "Exercício de classificação: app(peso, altura) retorna {imc, classificacao}. IMC = peso / altura². Neste modelo: abaixo se menor que 18.5; normal de 18.5 até menos de 25; acima a partir de 25. Peso e altura positivos.",
+    "hints": [
+      "Use altura diferente de 1.",
+      "Teste 18.5, 24.5 e 25.",
+      "Escreva as fronteiras antes de implementar as condições."
+    ],
+    "sample": [
+      [
+        70,
+        2
+      ],
+      {
+        "imc": 17.5,
+        "classificacao": "abaixo"
+      }
+    ]
+  },
+  {
+    "id": "12-caixa-eletronico",
+    "title": "Caixa eletrônico",
+    "lesson": 4,
+    "core": true,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toEqual",
+      "toThrow",
+      "toBeGreaterThanOrEqual"
+    ],
+    "contract": "app(valor). Retorne um objeto com as chaves 100, 50 e 10 indicando a quantidade de notas. Use primeiro as maiores notas. Aceite zero. Rejeite valores que não sejam múltiplos de 10 com erro \"Saque deve ser múltiplo de 10\".",
+    "hints": [
+      "Reconstrua o saque usando as notas retornadas.",
+      "Teste 180, 50 e um valor que termine em 5.",
+      "O teste de exceção deve receber uma função que chama a aplicação."
+    ],
+    "sample": [
+      [
+        180
+      ],
+      {
+        "10": 3,
+        "50": 1,
+        "100": 1
+      }
+    ]
+  },
+  {
+    "id": "13-desconto-loja",
+    "title": "Desconto da loja",
+    "lesson": 3,
+    "core": true,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toBeCloseTo",
+      "toHaveProperty",
+      "toBeLessThanOrEqual"
+    ],
+    "contract": "app(preco, percentual). Retorne {desconto, precoFinal}. Percentual de 0 a 100. Desconto em reais e preço final devem permanecer numéricos.",
+    "hints": [
+      "Comece com descontos de 0% e 100%.",
+      "Confira desconto e preço final separadamente.",
+      "A soma de desconto e preço final deve recuperar o preço original."
+    ],
+    "sample": [
+      [
+        200,
+        10
+      ],
+      {
+        "desconto": 20,
+        "precoFinal": 180
+      }
+    ]
+  },
+  {
+    "id": "14-tabuada",
+    "title": "Tabuada sem acúmulo",
+    "lesson": 4,
+    "core": true,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toHaveLength",
+      "toContain",
+      "not",
+      "toEqual"
+    ],
+    "contract": "app(numero). Retorne um novo array com os produtos de numero × 1 até numero × 10. Chamadas sucessivas devem ser independentes. Aceite inteiros negativos e zero.",
+    "hints": [
+      "Confira primeiro e último elementos.",
+      "Chame a função duas vezes no mesmo teste.",
+      "Investigue onde o array é criado e quanto tempo ele permanece em memória."
+    ],
+    "sample": [
+      [
+        2
+      ],
+      [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ]
+    ]
+  },
+  {
+    "id": "15-juros-simples",
+    "title": "Juros simples",
+    "lesson": 3,
+    "core": false,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toBeCloseTo",
+      "toHaveProperty",
+      "toBe"
+    ],
+    "contract": "app(capital, taxaMensalPercentual, meses). Retorne {juros, montante}. Juros simples: capital × taxa/100 × meses. Montante = capital + juros. Meses inteiros não negativos.",
+    "hints": [
+      "Teste taxa zero e tempo zero.",
+      "Calcule juros antes de avaliar o montante.",
+      "Confira se cada parcela do montante aparece uma única vez."
+    ],
+    "sample": [
+      [
+        1000,
+        2,
+        3
+      ],
+      {
+        "juros": 60,
+        "montante": 1060
+      }
+    ]
+  },
+  {
+    "id": "16-par-ou-impar",
+    "title": "Par ou ímpar",
+    "lesson": 2,
+    "core": true,
+    "folder": "atividades",
+    "xp": 100,
+    "minTests": 4,
+    "matchers": [
+      "toBe",
+      "not",
+      "toBeDefined"
+    ],
+    "contract": "app(numero). Retorne {par, impar, dobro}. par e impar devem ser booleanos opostos. dobro é o número multiplicado por dois. Aceite inteiros negativos, positivos e zero.",
+    "hints": [
+      "Experimente um número ímpar.",
+      "Inclua zero e um número negativo.",
+      "Verifique cada propriedade; um único caso pode esconder um defeito."
+    ],
+    "sample": [
+      [
+        3
+      ],
+      {
+        "par": false,
+        "impar": true,
+        "dobro": 6
+      }
+    ]
+  },
+  {
+    "id": "17-catalogo",
+    "title": "Catálogo assíncrono",
+    "lesson": 4,
+    "core": false,
+    "folder": "extras",
+    "xp": 150,
+    "minTests": 4,
+    "matchers": [
+      "resolves",
+      "rejects",
+      "toMatchObject",
+      "toThrow"
+    ],
+    "contract": "app(id) retorna uma Promise. Para id 1, resolva {id:1, nome:\"Teclado\", estoque:5}. Outros IDs positivos devem rejeitar com Error(\"Produto não encontrado\").",
+    "hints": [
+      "Use await na asserção da Promise.",
+      "Separe sucesso e rejeição.",
+      "Uma Promise resolvida com null não é uma Promise rejeitada."
+    ],
+    "sample": null
+  },
+  {
+    "id": "18-notificador",
+    "title": "Notificador com mock",
+    "lesson": 4,
+    "core": false,
+    "folder": "extras",
+    "xp": 150,
+    "minTests": 4,
+    "matchers": [
+      "toHaveBeenCalledTimes",
+      "toHaveBeenCalledWith",
+      "toStrictEqual"
+    ],
+    "contract": "app(email, enviar). Chame a dependência enviar uma vez com email e \"Implantação concluída\". Retorne {enviado:true}. Use jest.fn() no lugar de um serviço real.",
+    "hints": [
+      "Crie um mock novo em cada teste.",
+      "Inspecione quantidade de chamadas e argumentos.",
+      "O retorno correto não comprova que a dependência foi chamada corretamente."
+    ],
+    "sample": null
+  },
+  {
+    "id": "19-cadastro",
+    "title": "Ausência de dados",
+    "lesson": 4,
+    "core": false,
+    "folder": "extras",
+    "xp": 150,
+    "minTests": 4,
+    "matchers": [
+      "toBeNull",
+      "toBeUndefined",
+      "toBeDefined",
+      "toStrictEqual"
+    ],
+    "contract": "app(id) retorna {usuario, email}. Usuário 1: {id:1,email:\"ana@exemplo.com\"}. Usuário 2: {id:2}, sem email. Outros IDs: usuario null. email deve ser undefined quando não estiver disponível.",
+    "hints": [
+      "null, undefined e string vazia representam valores diferentes.",
+      "Teste usuário ausente e usuário presente sem email.",
+      "Use um matcher que verifique exatamente a ausência exigida no contrato."
+    ],
+    "sample": null
+  },
+  {
+    "id": "20-implantacao",
+    "title": "Liberação com testes",
+    "lesson": 4,
+    "core": false,
+    "folder": "extras",
+    "xp": 150,
+    "minTests": 4,
+    "matchers": [
+      "rejects",
+      "resolves",
+      "not",
+      "toHaveBeenCalledWith"
+    ],
+    "contract": "app(versao, servicos) é assíncrona. servicos.testar() resolve {aprovado:boolean}; servicos.publicar(versao) é uma função simulada. Teste antes de publicar. Se reprovado, rejeite Error(\"Testes reprovados\") e não publique. Se aprovado, publique uma vez e retorne {versao,publicado:true}.",
+    "hints": [
+      "Registre a ordem das chamadas em um array.",
+      "Simule uma suíte aprovada e outra reprovada.",
+      "Uma implantação reprovada não pode chamar publicar."
+    ],
+    "sample": null
+  }
+]

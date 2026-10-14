@@ -1,0 +1,152 @@
+[
+  [
+    "toBe",
+    "Valores primitivos e booleanos exatos.",
+    "expect(2 + 3).toBe(5);",
+    "Para objetos, prefira uma comparação estrutural."
+  ],
+  [
+    "toEqual",
+    "Compara os valores de objetos e arrays.",
+    "expect({status: 'ok'}).toEqual({status: 'ok'});",
+    "Dois objetos diferentes podem ter o mesmo conteúdo."
+  ],
+  [
+    "toStrictEqual",
+    "Compara a estrutura com mais rigor.",
+    "expect({id: 1, email: undefined}).toStrictEqual({id: 1, email: undefined});",
+    "Diferencia certas estruturas que toEqual pode tratar como equivalentes."
+  ],
+  [
+    "toBeCloseTo",
+    "Compara números com tolerância para decimais.",
+    "expect(0.1 + 0.2).toBeCloseTo(0.3, 5);",
+    "Use valores numéricos; toFixed retorna uma string."
+  ],
+  [
+    "not",
+    "Nega a verificação seguinte.",
+    "expect(5).not.toBe(0);",
+    "Dizer apenas que algo não é zero não comprova o valor correto."
+  ],
+  [
+    "toBeGreaterThan",
+    "Verifica se o valor é estritamente maior.",
+    "expect(8).toBeGreaterThan(7);",
+    "A igualdade não é aceita."
+  ],
+  [
+    "toBeGreaterThanOrEqual",
+    "Verifica maior ou igual.",
+    "expect(7).toBeGreaterThanOrEqual(7);",
+    "Útil para fronteiras inclusivas."
+  ],
+  [
+    "toBeLessThan",
+    "Verifica se o valor é estritamente menor.",
+    "expect(24.5).toBeLessThan(25);",
+    "Teste também a fronteira exata."
+  ],
+  [
+    "toBeLessThanOrEqual",
+    "Verifica menor ou igual.",
+    "expect(10).toBeLessThanOrEqual(10);",
+    "Útil para limites máximos inclusivos."
+  ],
+  [
+    "toMatch",
+    "Verifica uma string com expressão regular.",
+    "expect('Situação: aprovado').toMatch(/aprovado$/);",
+    "Uma correspondência parcial pode aceitar mensagens incompletas."
+  ],
+  [
+    "toContain",
+    "Verifica um item em um array ou trecho em uma string.",
+    "expect(['teste', 'implantação']).toContain('teste');",
+    "Para objetos dentro de arrays, considere toContainEqual."
+  ],
+  [
+    "toContainEqual",
+    "Verifica um objeto por conteúdo dentro de um array.",
+    "expect([{id: 1}, {id: 2}]).toContainEqual({id: 2});",
+    "Também verifique o tamanho quando a quantidade for um requisito."
+  ],
+  [
+    "toHaveLength",
+    "Verifica o comprimento.",
+    "expect([10, 20, 30]).toHaveLength(3);",
+    "O tamanho correto sozinho não comprova o conteúdo."
+  ],
+  [
+    "toHaveProperty",
+    "Verifica uma propriedade e, opcionalmente, seu valor.",
+    "expect({versao: '1.0.0'}).toHaveProperty('versao', '1.0.0');",
+    "Existência da propriedade e correção do valor são verificações diferentes."
+  ],
+  [
+    "toThrow",
+    "Verifica uma exceção.",
+    "expect(() => {throw new Error('Entrada inválida');}).toThrow(/inválida/);",
+    "Passe uma função para expect; não execute a chamada antes da asserção."
+  ],
+  [
+    "toBeTruthy",
+    "Verifica um valor considerado verdadeiro em uma condição.",
+    "expect('preenchido').toBeTruthy();",
+    "Se o contrato exige o booleano true, use também toBe(true)."
+  ],
+  [
+    "toBeFalsy",
+    "Verifica um valor considerado falso em uma condição.",
+    "expect(0).toBeFalsy();",
+    "false, zero e string vazia são valores distintos."
+  ],
+  [
+    "toBeNull",
+    "Verifica exatamente null.",
+    "expect(null).toBeNull();",
+    "Não aceita undefined."
+  ],
+  [
+    "toBeUndefined",
+    "Verifica exatamente undefined.",
+    "expect(undefined).toBeUndefined();",
+    "Não aceita string vazia nem null."
+  ],
+  [
+    "toBeDefined",
+    "Verifica que o valor não é undefined.",
+    "expect({id: 1}.id).toBeDefined();",
+    "Não garante que o valor esteja correto; null também está definido."
+  ],
+  [
+    "toMatchObject",
+    "Verifica parte da estrutura de um objeto.",
+    "expect({id: 1, nome: 'Ana'}).toMatchObject({id: 1});",
+    "Use comparação completa quando todas as propriedades forem relevantes."
+  ],
+  [
+    "resolves",
+    "Aplica a verificação ao valor resolvido de uma Promise.",
+    "await expect(Promise.resolve(5)).resolves.toBe(5);",
+    "Use await ou retorne a asserção."
+  ],
+  [
+    "rejects",
+    "Aplica a verificação à rejeição de uma Promise.",
+    "await expect(Promise.reject(new Error('Falhou'))).rejects.toThrow('Falhou');",
+    "Promise resolvida com null não conta como rejeição."
+  ],
+  [
+    "toHaveBeenCalledTimes",
+    "Verifica quantas vezes um mock foi chamado.",
+    "const enviar = jest.fn(); enviar(); expect(enviar).toHaveBeenCalledTimes(1);",
+    "Crie mocks independentes ou limpe suas chamadas entre testes."
+  ],
+  [
+    "toHaveBeenCalledWith",
+    "Verifica os argumentos enviados a um mock.",
+    "const enviar = jest.fn(); enviar('ok'); expect(enviar).toHaveBeenCalledWith('ok');",
+    "Combine argumentos e quantidade quando ambos forem requisitos."
+  ]
+]

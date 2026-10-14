@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UC11 · Central de Qualidade</title>
+<link rel="stylesheet" href="/estilos.css">
+<script defer src="/painel.js"></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<aside>
+  <div class="marca"><span class="simbolo">Q</span><div>Central de Qualidade<small>UC11 · Técnico em Informática</small></div></div>
+  <nav aria-label="Seções">
+    <button data-view="missoes" class="active">◈ Missões</button>
+    <button data-view="academia">◇ Academia de matchers</button>
+    <button data-view="git">⌘ Aula de Git</button>
+    <button data-view="testes">▷ Primeiros testes</button>
+    <button data-view="implantacao">↗ Implantação local</button>
+  </nav>
+  <div class="nota">4 aulas · 16 horas<br>Teste. Investigue. Corrija. Registre.</div>
+</aside>
+<main id="conteudo">
+<header><span class="pill">LABORATÓRIO UC11</span><button id="exportar">↓ Exportar evidências</button></header>
+<section class="hero">
+  <p class="eyebrow">EXECUTAR TESTE E IMPLANTAÇÃO DE APLICATIVOS COMPUTACIONAIS</p>
+  <h1>Sua próxima missão:<br><em>encontrar o defeito.</em></h1>
+  <p>Use Jest para transformar requisitos em verificações. Corrija as aplicações e prepare uma versão para implantação local.</p>
+</section>
+<section class="stats" aria-label="Progresso">
+  <article><small>EXPERIÊNCIA</small><strong id="xp">0 XP</strong><span id="nivel">Aprendiz de testes</span></article>
+  <article><small>TRILHA ESSENCIAL</small><strong id="essenciais">0 / 8</strong><span>Missões previstas para as aulas</span></article>
+  <article><small>MISSÕES CONCLUÍDAS</small><strong id="concluidas">0 / 20</strong><span id="conquistas">Sua primeira conquista está próxima</span></article>
+</section>
+<p id="mensagem" role="status" aria-live="polite"></p>
+<section id="filtros" class="toolbar">
+  <label>Buscar missão <input id="busca" type="search" placeholder="Cinema, toThrow, desconto..."></label>
+  <label>Trilha <select id="trilha"><option value="core">Essenciais</option><option value="all">Todas as atividades</option><option value="extra">Desafios extras</option></select></label>
+  <label>Aula <select id="aula"><option value="">Todas</option><option value="2">Aula 2</option><option value="3">Aula 3</option><option value="4">Aula 4</option></select></label>
+</section>
+<section id="lista" class="grid" aria-label="Atividades"></section>
+<section id="academia" class="grid" hidden></section>
+<section id="guia" hidden><h2 id="guia-titulo"></h2><pre id="guia-texto" class="documento"></pre></section>
+<footer>XP é acompanhamento pedagógico. A qualidade dos testes será avaliada pelos requisitos, pelas evidências e pela revisão do professor.</footer>
+</main>
+<dialog id="missao">
+  <div class="dialog-head"><span id="dialog-tag"></span><button id="fechar" aria-label="Fechar missão">✕</button></div>
+  <h2 id="titulo"></h2>
+  <p id="contrato"></p>
+  <div id="matchers" class="chips"></div>
+  <h3>Seu percurso</h3>
+  <ol>
+    <li>Planeje as entradas e os resultados esperados.</li>
+    <li>Edite app.test.js no VS Code e reproduza os defeitos.</li>
+    <li>Registre a falha e faça o commit dos testes.</li>
+    <li>Corrija app.js e execute os testes novamente.</li>
+    <li>Faça o commit da correção e registre sua evidência.</li>
+  </ol>
+  <p id="local" class="caminho"></p>
+  <pre id="comando"></pre>
+  <button id="copiar">Copiar comando</button>
+  <h3>Código e testes</h3>
+  <div class="toolbar compact">
+    <button data-file="app.js">Ver aplicação</button>
+    <button data-file="app.test.js">Ver meus testes</button>
+    <button data-file="README.md">Ver instruções</button>
+  </div>
+  <pre id="codigo"></pre>
+  <h3>Dicas graduais</h3>
+  <div id="dicas"></div>
+  <h3>Executar Jest</h3>
+  <p>Para concluir, escreva ao menos quatro testes. Remova os test.todo e evite testes ignorados.</p>
+  <button id="rodar" class="primary">▶ Executar meus testes</button>
+  <p id="resultado" role="status"></p>
+  <pre id="log"></pre>
+  <h3>Evidência da missão</h3>
+  <form id="evidencia">
+    <label>Seu nome <input name="nome" required minlength="3"></label>
+    <label>Cenários testados <textarea name="cenario" required minlength="3"></textarea></label>
+    <label>Falha observada antes da correção <textarea name="falha" required minlength="3"></textarea></label>
+    <label>Correção e explicação <textarea name="correcao" required minlength="3"></textarea></label>
+    <label>Matchers utilizados e justificativa <textarea name="matchers" required minlength="3"></textarea></label>
+    <label>Commit da correção <input name="commit" required placeholder="Ex.: a1b2c3d" pattern="[a-fA-F0-9]{7,40}"></label>
+    <button class="primary" type="submit">Concluir missão e registrar XP</button>
+  </form>
+</dialog>
+</body>
+</html>
